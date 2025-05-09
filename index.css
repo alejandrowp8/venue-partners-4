@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 35 50% 98%; /* Light Beige/Cream */
+    --foreground: 27 38% 15%; /* PANTONE 18-1148 TCX Dark Brown */
+
+    --card: 35 40% 95%; /* Slightly darker beige for cards */
+    --card-foreground: 27 38% 15%;
+
+    --popover: 35 50% 98%;
+    --popover-foreground: 27 38% 15%;
+
+    --primary: 27 38% 35%;  /* PANTONE 18-1148 TCX */
+    --primary-foreground: 35 100% 97%; /* Light Cream for text on primary */
+
+    --secondary: 30 35% 55%; /* Muted Taupe/Brown */
+    --secondary-foreground: 35 100% 97%;
+
+    --muted: 30 30% 80%; /* Light Grayish Brown */
+    --muted-foreground: 27 30% 30%; /* Darker Muted Brown */
+
+    --accent: 30 65% 50%; /* Warm Caramel/Ochre Accent */
+    --accent-foreground: 27 38% 10%; /* Dark Brown for text on accent */
+
+    --destructive: 0 70% 50%; /* Soft Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 30% 85%; /* Light Brownish Border */
+    --input: 30 30% 90%; /* Light Brownish Input Background */
+    --ring: 27 38% 35%; /* PANTONE 18-1148 TCX for focus rings */
+
+    --radius: 0.5rem; /* Slightly softer radius */
+  }
+
+  .dark {
+    --background: 27 30% 8%; /* Very Dark PANTONE 18-1148 TCX */
+    --foreground: 35 40% 90%; /* Light Beige/Cream text */
+
+    --card: 27 30% 12%; /* Darker PANTONE 18-1148 TCX for cards */
+    --card-foreground: 35 40% 90%;
+
+    --popover: 27 30% 8%;
+    --popover-foreground: 35 40% 90%;
+
+    --primary: 27 45% 45%; /* Brighter PANTONE 18-1148 TCX for dark mode */
+    --primary-foreground: 27 20% 5%; /* Very Dark Brown for text on primary */
+
+    --secondary: 30 30% 25%; /* Muted Dark Brown */
+    --secondary-foreground: 35 40% 90%;
+
+    --muted: 30 25% 20%; /* Dark Grayish Brown */
+    --muted-foreground: 30 30% 70%; /* Lighter Muted Brown */
+
+    --accent: 30 70% 60%; /* Brighter Caramel Accent for dark mode */
+    --accent-foreground: 27 20% 5%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 27 25% 18%; /* Dark PANTONE 18-1148 TCX Border */
+    --input: 27 25% 20%; /* Dark PANTONE 18-1148 TCX Input Background */
+    --ring: 27 45% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+  }
+}
+
+.glassmorphism {
+  background: hsla(var(--card) / 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid hsla(var(--border) / 0.3);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+}
+  
